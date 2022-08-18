@@ -1,12 +1,8 @@
 FROM ubuntu:18.04
 
-RUN apt-get update --fix-missing
-RUN apt-get upgrade -y
-RUN apt-get install -y wget
-RUN apt-get update --fix-missing && apt-get install -y --fix-missing --no-install-recommends git
+RUN apt-get update && apt-get upgrade -y \
+&& apt-get install --fix-missing --no-install-recommends -y wget git python3 python3-pip
 
-RUN apt install -y python3
-RUN apt-get install -y python3-pip
 RUN pip3 install behave
 RUN pip3 install requests
 
